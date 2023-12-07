@@ -1,13 +1,12 @@
-from fastapi import APIRouter, HTTPException
-from application.usecase.calculate_metrics_per_year import CalculateMetricsPerYear
 from infra.gateway.strava_gateway_http import StravaGatewayHttp
+from fastapi import APIRouter, HTTPException
+from application.usecase.persist_activities import PersistActivities
 from fastapi.responses import JSONResponse
-
 router = APIRouter()
 
 
-@router.get("/per_year")
-def metrics_per_year():
+@router.post("/activities")
+def persist_activities():
     try:
         gateway = StravaGatewayHttp()
         activities = gateway.get_activities()
@@ -16,12 +15,7 @@ def metrics_per_year():
                 "message": activities.get('message')
             }
             raise HTTPException(status_code=400, detail=error)
-        use_case = CalculateMetricsPerYear(activities)
+        use_case = PersistActivities(activities)
         return use_case.execute()
     except HTTPException as e:
         return JSONResponse(content=e.detail, status_code=e.status_code)
-
-
-@router.get("/token")
-def token():
-    return StravaGatewayHttp().get_token()
