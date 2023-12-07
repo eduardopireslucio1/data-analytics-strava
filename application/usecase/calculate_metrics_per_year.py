@@ -1,13 +1,11 @@
-from collections import defaultdict
-from datetime import datetime
 import pandas as pd
 
 
-class Activities:
+class CalculateMetricsPerYear:
     def __init__(self, activities):
         self.activities = activities
 
-    def calculate_indicators_by_year(self):
+    def execute(self):
         df = pd.DataFrame(self.activities)
         df['start_date'] = pd.to_datetime(df['start_date'])
         df['year'] = df['start_date'].dt.year
@@ -36,4 +34,4 @@ class Activities:
             'average_speed_per_year': average_speed_per_year
         })
         metrics = df_metrics.to_dict()
-        print(metrics)
+        return metrics
