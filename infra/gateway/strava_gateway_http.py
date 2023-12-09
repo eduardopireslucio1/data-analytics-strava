@@ -24,7 +24,7 @@ class StravaGatewayHttp:
         }
 
     def get_activities_batch(self, page, per_page):
-        activities = requests.get(
+        return requests.get(
             f'{self.STRAVA_API_URL}/athlete/activities?after={self.PARAM_AFTER}&per_page={per_page}'
             f'&page={page}',
             headers=self.headers).json()

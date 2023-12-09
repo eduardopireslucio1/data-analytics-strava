@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class MongoAdapter(ABC):
+class RepositoryInterface(ABC):
     @abstractmethod
     def insert_one(self, document):
         pass
@@ -20,6 +20,10 @@ class MongoAdapter(ABC):
 
     @abstractmethod
     def delete_one(self, query):
+        pass
+
+    @abstractmethod
+    def delete_many(self):
         pass
 
     @abstractmethod
