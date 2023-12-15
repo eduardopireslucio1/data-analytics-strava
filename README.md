@@ -1,6 +1,6 @@
 # Cycling Activity Analysis Project
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
 ![Pandas](https://img.shields.io/badge/Pandas-1.0%2B-brightgreen)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.68%2B-orange)
 
