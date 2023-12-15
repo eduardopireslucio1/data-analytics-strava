@@ -3,6 +3,7 @@
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
 ![Pandas](https://img.shields.io/badge/Pandas-1.0%2B-brightgreen)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.68%2B-orange)
+![MongoDB](https://img.shields.io/badge/MongoDB-7.0.4%2B-green)
 
 This is a personal project dedicated to the study of the Python language, using the Strava API to analyze cycling activity data.
 
